@@ -1,22 +1,48 @@
-// Assignment code here
+//Assignment code here
 
+var upper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var lower = ["a", "b", "c", "d"];
+var numeric = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+var specChar = ["#", "@", "$", "*", "&", "%"]
+console.log(upper);
 
-window.prompt("What is your password criteria");
+/*
+window.prompt ("Would you like to include uppercase letters in your password?");
 
-window.prompt("Would you like to include capital letters?");
+window.prompt ("Would you like to include lowercase letters in your password?");
 
+window.prompt ("Would you like to use numbers in your password?");
 
-// Get references to the #generate element
+window.prompt ("Would you like to include special characters in your password?");
+
+window.prompt ("How many characters would you like your password to be? (Between 8-12 characters)");
+
+*/
+
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+generateBtn.addEventListener("click", function() {
+  window.prompt("Would you like to include uppercase letters in your password?");})
 
-  passwordText.value = password;
+  
 
+/* this works, but it is not what is required
+function myFunction() {
+document.getElementById("generate").innerHTML = "YOU CLICKED ME!";
+} */
+/*
+function myFunction() {
+  buttonClick.getElementById("generate") = "Would you like to include uppercase letters in your password?";
+  }
+
+
+function buttonClick() {
+  let text;
+  let xxxxx = window.prompt("Would you like to include uppercase letters in your password?")
+  if (xxxx == null || person == "") {
+  text = "User cancelled the prompt.";
+  }   else {
+  text = "thank you for your response";
+  }
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+) */
