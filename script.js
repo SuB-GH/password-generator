@@ -24,6 +24,27 @@ var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", function() {
   window.prompt("Would you like to include uppercase letters in your password?");})
 
+
+
+  function generateRandom(length) {
+    let result = ' ';
+    
+    }
+    
+    var upper = upper[Math.floor(Math.random()*upper.length)];
+    console.log(upper)
+
+    var lower = lower[Math.floor(Math.random()*lower.length)];
+    console.log(lower)
+
+    var numbers = numeric[Math.floor(Math.random()*numeric.length)]
+    console.log(numbers)
+
+    var specChar = specChar[Math.floor(Math.random()*specChar.length)]
+    console.log(specChar)
+
+    //console.log(Math.random());
+
   
 
 /* this works, but it is not what is required
