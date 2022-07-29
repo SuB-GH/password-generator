@@ -4,28 +4,25 @@ var numeric = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var specChar = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '+', '-', '.', '~', '|', '<', '>', '=', '-', '_', '/', ':', ';', '?', '[', ']', '{', '}', '~'];
 var passwordLength
 var containerArray = [];
-
+var generatePassword
 
 // button click generates window prompt with first question
 var generateBtn = document.querySelector("#generate");
 
-
-
 generateBtn.addEventListener("click", function () {
+
+  var password = ""
+  // how many characters prompt
+  passwordLength = window.prompt("How many characters would you like your password to be? (Select a number between 8-128)");
+
   // uppercase letters prompt
-  //var upperCase = window.prompt("Would you like to include uppercase letters in your password?")
-var password = ""
-
-  passwordLength = window.prompt("How many characters would you like your password to be? (Between 8-128)");
-
   var upperCase = window.confirm("Would you like to include uppercase letters in your password?")
 
   if (upperCase) {
     containerArray.push(...upper);
-   
   }
-   
-    //lowercase letters prompt
+
+  //lowercase letters prompt
   var lowerCase = window.confirm("Would you like to include lowercase letters in your password?")
 
   if (lowerCase) {
@@ -46,75 +43,22 @@ var password = ""
     containerArray.push(...specChar);
   }
 
-  for(var i = 0; i < passwordLength; i++) {
+  // randomly select characters from containerArray to create password
+  for (var i = 0; i < passwordLength; i++) {
     var randomItem = containerArray[Math.floor(Math.random() * containerArray.length)];
     password = password + randomItem
-
   }
 
-  
+  //console.log(password);
 
-  console.log(password);
-  // for (let i = 0; i = 5; i++) {
-  //   text += "test number is " + i + "<br>";
-  // };
+  // Write password to the #password input
+  function writePassword() {
+    //var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+    passwordText.value = password;
+   
+  }
 
+  // Add event listener to generate button
+  generateBtn.addEventListener("click", writePassword);
 })
-
-
-
-
-
-// for(var i=0; i< = passwordLength; i++) {
-//   var randomItem = function (min, max) {}
-// }
-
-
-
-
-//   var randomItem = lower[Math.floor(Math.random() * lower.length)];
-//   console.log(randomItem2);
-
-//   var randomItem = numeric[Math.floor(Math.random() * numeric.length)];
-//   console.log(randomItem3);
-
-// var randomItem = specChar[Math.floor(Math.random() * specChar.length)];
-// console.log(randomItem4);
-
-
-// var randomChar = function(min, max) {
-//   var value = Math.floor(Math.random() * 12);
-
-//   return value;
-  
-// }
-// randomChar();
-// console.log(randomChar);
-
-
-// for(var i = 0; i < upper.length; i++) {
-//   for(var i = 0; i < lower.length; i++)
-//   for(var i = 0; i < numeric.length; i++)
-//   for(var i = 0; i < specChar.length; i++)
-//   console.log(upper[i], lower[i], numeric[i], specChar[i]);
-
-
-// // STARTER CODE BEGIN
-// // Assignment code here
-// // Get references to the #generate element
-// 
-
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-// STARTER CODE END
