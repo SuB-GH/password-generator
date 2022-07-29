@@ -49,16 +49,19 @@ generateBtn.addEventListener("click", function () {
     password = password + randomItem
   }
 
-  //console.log(password);
+  //var generateBtn = document.querySelector("#password");
+  // Add event listener to generate button
+  
 
   // Write password to the #password input
   function writePassword() {
     //var password = generatePassword();
     var passwordText = document.querySelector("#password");
     passwordText.value = password;
-   
-  }
+    generateBtn.addEventListener("click", writePassword);
 
-  // Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword);
+  }
+  writePassword();
+
+
 })
