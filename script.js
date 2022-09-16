@@ -6,6 +6,7 @@ var passwordLength
 var containerArray = [];
 var generatePassword
 
+
 // button click generates window prompt with first question
 var generateBtn = document.querySelector("#generate");
 
@@ -42,26 +43,21 @@ generateBtn.addEventListener("click", function () {
   if (characters) {
     containerArray.push(...specChar);
   }
-
+  password = ""
   // randomly select characters from containerArray to create password
   for (var i = 0; i < passwordLength; i++) {
     var randomItem = containerArray[Math.floor(Math.random() * containerArray.length)];
     password = password + randomItem
   }
 
-  //var generateBtn = document.querySelector("#password");
-  // Add event listener to generate button
-  
-
   // Write password to the #password input
   function writePassword() {
     //var password = generatePassword();
     var passwordText = document.querySelector("#password");
-    passwordText.value = password;
-    generateBtn.addEventListener("click", writePassword);
-
+    passwordText.value = password;   
   }
+
   writePassword();
 
-
 })
+
