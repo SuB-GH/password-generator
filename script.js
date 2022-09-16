@@ -6,7 +6,6 @@ var passwordLength
 var containerArray = [];
 var generatePassword
 
-
 // button click generates window prompt with first question
 var generateBtn = document.querySelector("#generate");
 
@@ -15,6 +14,17 @@ generateBtn.addEventListener("click", function () {
   var password = ""
   // how many characters prompt
   passwordLength = window.prompt("How many characters would you like your password to be? (Select a number between 8-128)");
+ 
+  // if/else statement to verify password length is between 8-128 characters
+  if (passwordLength >= 8 && passwordLength <= 128) {
+    return true;
+  }
+  else {
+    alert(
+      "Password length should be equal to or greater than 8 and less than or equal to 128"
+    );
+    passwordLength = window.prompt("How many characters would you like your password to be? (Select a number between 8-128)");
+  }
 
   // uppercase letters prompt
   var upperCase = window.confirm("Would you like to include uppercase letters in your password?")
@@ -54,10 +64,10 @@ generateBtn.addEventListener("click", function () {
   function writePassword() {
     //var password = generatePassword();
     var passwordText = document.querySelector("#password");
-    passwordText.value = password;   
+    passwordText.value = password;
   }
 
   writePassword();
-
+  containerArray = [] //this "clears out" the password and allows user to generate a new one upon button click
 })
 
