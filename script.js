@@ -15,15 +15,6 @@ generateBtn.addEventListener("click", function () {
   // 'how many characters' prompt
   passwordLength = window.prompt("How many characters would you like your password to be? (Select a number between 8-128)");
 
-  // if/else statement to verify password length is between 8-128 characters
-  // while (!(passwordLength >= 8 && passwordLength <= 128)) {
-  //   alert("Password length should be equal to or greater than 8 and less than or equal to 128");
-  //   passwordLength = window.prompt("How many characters would you like your password to be? (Select a number between 8-128)");
-  // }
-  // else {
-    
-  // }
-
   while (passwordLength < 8 || passwordLength > 128) {
     alert("Password length should be equal to or greater than 8 and less than or equal to 128");
     passwordLength = window.prompt("How many characters would you like your password to be? (Select a number between 8-128)");
