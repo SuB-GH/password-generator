@@ -12,17 +12,20 @@ var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", function () {
 
   var password = ""
-  // how many characters prompt
+  // 'how many characters' prompt
   passwordLength = window.prompt("How many characters would you like your password to be? (Select a number between 8-128)");
- 
+
   // if/else statement to verify password length is between 8-128 characters
-  if (passwordLength >= 8 && passwordLength <= 128) {
-    return true;
-  }
-  else {
-    alert(
-      "Password length should be equal to or greater than 8 and less than or equal to 128"
-    );
+  // while (!(passwordLength >= 8 && passwordLength <= 128)) {
+  //   alert("Password length should be equal to or greater than 8 and less than or equal to 128");
+  //   passwordLength = window.prompt("How many characters would you like your password to be? (Select a number between 8-128)");
+  // }
+  // else {
+    
+  // }
+
+  while (passwordLength < 8 || passwordLength > 128) {
+    alert("Password length should be equal to or greater than 8 and less than or equal to 128");
     passwordLength = window.prompt("How many characters would you like your password to be? (Select a number between 8-128)");
   }
 
