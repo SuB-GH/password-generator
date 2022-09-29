@@ -5,6 +5,7 @@ This app allows the user to generate a password based on certain criteria they s
 
 ## Usage:
 Click on the "Generate Password" button and answer the prompts.  After all prompts are answered, the password will be generated.
+
 <img width="637" alt="password-generator-screenshot" src="https://user-images.githubusercontent.com/105752625/193125779-d5343cda-c065-40da-8f2a-e193717addd9.PNG">
 
 ## Deployed application:
